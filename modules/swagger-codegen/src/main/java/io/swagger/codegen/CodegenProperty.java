@@ -50,6 +50,7 @@ public class CodegenProperty implements Cloneable {
     public boolean hasValidation; // true if pattern, maximum, etc are set (only used in the mustache template)
     public boolean isInherited;
     public String nameInCamelCase; // property name in camel case
+    public String upperCaseName;
     // enum name based on the property name, usually use as a prefix (e.g. VAR_NAME) for enum name (e.g. VAR_NAME_VALUE1)
     public String enumName;
     public Integer maxItems;
@@ -132,6 +133,7 @@ public class CodegenProperty implements Cloneable {
         result = prime * result + ((isListContainer  ? 13:31));
         result = prime * result + Objects.hashCode(isInherited);
         result = prime * result + Objects.hashCode(nameInCamelCase);
+        result = prime * result + Objects.hashCode(upperCaseName);
         result = prime * result + Objects.hashCode(enumName);
         result = prime * result + ((maxItems == null) ? 0 : maxItems.hashCode());
         result = prime * result + ((minItems == null) ? 0 : minItems.hashCode());
@@ -313,6 +315,9 @@ public class CodegenProperty implements Cloneable {
             return false;
         }
         if (!Objects.equals(this.nameInCamelCase, other.nameInCamelCase)) {
+            return false;
+        }
+        if (!Objects.equals(this.upperCaseName, other.upperCaseName)) {
             return false;
         }
         if (!Objects.equals(this.enumName, other.enumName)) {

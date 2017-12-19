@@ -120,8 +120,24 @@ public class MotivateServerCodegen extends JavaJAXRSSpecServerCodegen {
 	@Override
 	public CodegenProperty fromProperty(String name, Property p) {
 		CodegenProperty property = super.fromProperty(name, p);
-		property.upperCaseName = sanitizeName( property.name.toUpperCase() );
+		property.upperCaseName = replaceWithUnderscore( property.name ).toUpperCase();
 		return property;
+	}
+
+	private String replaceWithUnderscore(String name) {
+		String result = "";
+		int splitIdx = 0;
+		int i = 0;
+		for ( i = 0; i < name.length(); i++ ) {
+			if ( Character.isUpperCase( name.charAt( i ) ) ) {
+				result += name.substring( splitIdx, i );
+				splitIdx = i;
+				result += "_";
+			}
+		}
+
+		result += name.substring( splitIdx, i );
+		return result;
 	}
 
 }

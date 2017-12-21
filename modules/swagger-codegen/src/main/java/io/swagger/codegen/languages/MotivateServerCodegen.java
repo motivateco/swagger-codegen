@@ -18,6 +18,7 @@ import io.swagger.models.ComposedModel;
 import io.swagger.models.Model;
 import io.swagger.models.ModelImpl;
 import io.swagger.models.RefModel;
+import io.swagger.models.Swagger;
 import io.swagger.models.properties.ArrayProperty;
 import io.swagger.models.properties.DecimalProperty;
 import io.swagger.models.properties.Property;
@@ -138,6 +139,11 @@ public class MotivateServerCodegen extends JavaJAXRSSpecServerCodegen {
 
 		result += name.substring( splitIdx, i );
 		return result;
+	}
+
+	@Override
+	public void processSwagger(Swagger swagger) {
+
 	}
 
 }

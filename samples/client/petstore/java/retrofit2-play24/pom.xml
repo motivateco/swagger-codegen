@@ -268,7 +268,7 @@
         <gson-fire-version>1.8.0</gson-fire-version>
         <swagger-core-version>1.5.15</swagger-core-version>
                 <jackson-version>2.6.6</jackson-version>
-                <play-version>2.4.11</play-version>
+                <play-version>2.5.0</play-version>
         <retrofit-version>2.3.0</retrofit-version>
         <oltu-version>1.0.1</oltu-version>
         <junit-version>4.12</junit-version>

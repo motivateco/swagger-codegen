@@ -4,7 +4,7 @@
     <artifactId>swagger-codegen-project</artifactId>
     <packaging>pom</packaging>
     <name>swagger-codegen-project</name>
-    <version>2.3.0.8-SNAPSHOT</version>
+    <version>2.3.0-8d</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <scm>
         <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
@@ -944,9 +944,13 @@
         <reflections-version>0.9.10</reflections-version>
     </properties>
     <distributionManagement>
-        <repository>
-            <id>nexus</id>
-            <url>https://nexus.priv.8d.com:2443/nexus/content/repositories/snapshots</url>
-        </repository>
-    </distributionManagement>
+		<repository>
+			<id>8drelease</id>
+			<url>https://nexus.priv.8d.com:2443/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>8dsnapshot</id>
+			<url>https://nexus.priv.8d.com:2443/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
